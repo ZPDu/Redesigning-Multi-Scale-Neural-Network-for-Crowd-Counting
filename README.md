@@ -27,7 +27,7 @@ We will release the rest of the code later.
 ## Evaluation
 
 - Download the processed dataset ShanghaiTech part A([Link](https://drive.google.com/file/d/1QNLhNiUry77a6uY6dp5hLOs_bUQsU3Cd/view?usp=sharing)). For the preprocessing code, please refer to [this](https://github.com/TencentYoutuResearch/CrowdCounting-SASNet/blob/main/prepare_dataset.py).
-- Download our SHA model [here](https://drive.google.com/file/d/10m-k31ok3ET1ZMs8qJXqJQgH44yNgSlT/view?usp=sharing).
+- Download our SHA models [here](https://drive.google.com/drive/folders/1uL5Nll3H_SEpWFdriCJ5oawA4WpkzHBf?usp=share_link).
 - Modify the path to the processed dataset and pretrained model in 'setting.py' in datasets/SHHA
 - Run 'test.py'
 
