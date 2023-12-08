@@ -1,6 +1,6 @@
 # Redesigning Multi-Scale Neural Network for Crowd Counting
 
-This is the official implementation of 'Redesigning Multi-Scale Neural Network for Crowd Counting'. [[arXiv](https://arxiv.org/abs/2208.02894)]
+This is the official implementation of 'Redesigning Multi-Scale Neural Network for Crowd Counting'. (IEEE Transactions on Image Processing) [[arXiv](https://arxiv.org/abs/2208.02894)]
 
 ![overview](./exp/overview.png)
 
@@ -52,3 +52,14 @@ If you find this work useful, please cite
 }
 ```
 
+or
+
+```@article{du2023redesigning,
+@article{du2023redesigning,
+  title={Redesigning multi-scale neural network for crowd counting},
+  author={Du, Zhipeng and Shi, Miaojing and Deng, Jiankang and Zafeiriou, Stefanos},
+  journal={IEEE Transactions on Image Processing},
+  year={2023},
+  publisher={IEEE}
+}
+```
