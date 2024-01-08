@@ -11,16 +11,11 @@ from datasets.SHHA.loading_data import loading_data
 from datasets.SHHA.setting import cfg_data
 from misc.timer import Timer
 
-transform = standard_transforms.Compose([
-    standard_transforms.ToTensor()])
-
 exp_name = cfg_data.EXP_NAME
 log_txt = cfg_data.EXP_PATH + '/' + exp_name + '.txt'
 
 if not os.path.exists(cfg_data.EXP_PATH):
     os.mkdir(cfg_data.EXP_PATH)
-
-pil_to_tensor = standard_transforms.ToTensor()
 
 train_record = {'best_mae': 1e20, 'mse': 1e20, 'corr_loss': 0, 'corr_epoch': -1, 'best_model_name': ''}
 
