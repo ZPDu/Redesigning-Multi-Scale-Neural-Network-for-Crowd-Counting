@@ -107,8 +107,6 @@ def train(train_loader, net, optimizer, epoch, i_tb):
         # total objectives, loss weights can be adjusted
         loss = loss + rel_loss + torch.sum(imp_loss) + torch.sum(cross_entropy_loss)
 
-        loss = torch.sum(loss)
-
         loss = loss / pred_maps[0].shape[0]
         loss.backward()
         optimizer.step()
