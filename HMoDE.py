@@ -105,6 +105,9 @@ class HMoDE(nn.Module):
         wmaps1 = wmaps_[0]
         wmaps2 = wmaps_[1]
         wmaps3 = wmaps_[2]
+        # calculating expert importance loss
+        imp_loss = cv_squared(wmaps1.sum(0)) + cv_squared(wmaps2.sum(0)) + cv_squared(wmaps3.sum(0))
+
         density1 = torch.cat([density_map1, density_map2], 1)
         density1 = density1 * wmaps1
         density1 = torch.sum(density1, 1, keepdim=True)
@@ -124,7 +127,12 @@ class HMoDE(nn.Module):
 
         density = nn.functional.interpolate(density, size[2:], mode='nearest')
 
-        return density
+        return [density_map1, density_map2, density_map3, density1, density2, density3, density], amp, imp_loss
+
+def cv_squared(x):
+    eps = 1e-10
+    x = x.sum(2).sum(1)
+    return x.float().var() / (x.float().mean()**2 + eps)
 
 class MaskBlock(nn.Module):
     # Attention module

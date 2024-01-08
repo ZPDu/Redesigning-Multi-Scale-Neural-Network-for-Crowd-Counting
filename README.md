@@ -20,7 +20,10 @@ pip install -r requirements.txt
 
 ## Training
 
-We will release the rest of the code later.
+* Fill in the settings in datasets/SHHA/setting.py
+* Run 'train.py'
+
+(The part for relative loss will be reorganized)
 
 
 
