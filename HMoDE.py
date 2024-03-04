@@ -125,9 +125,11 @@ class HMoDE(nn.Module):
         density = density * wmaps
         density = torch.sum(density, 1, keepdim=True)
 
-        density = nn.functional.interpolate(density, size[2:], mode='nearest')
+        densities = [density_map1, density_map2, density_map3, density1, density2, density3, density]
+        for i in range(len(densities)):
+          densities[i] = nn.functional.interpolate(densities[i], size[2:], mode='nearest')
 
-        return [density_map1, density_map2, density_map3, density1, density2, density3, density], amp, imp_loss
+        return densities, amp, imp_loss
 
 def cv_squared(x):
     eps = 1e-10

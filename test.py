@@ -42,7 +42,7 @@ if __name__ == '__main__':
             img = img.cuda()
             gt_map = gt_map.cuda()
 
-            pred_map = net(img)
+            pred_map = net(img)[0][-1]
 
             pred_map = pred_map.data.cpu().numpy()
             gt_map = gt_map.data.cpu().numpy()

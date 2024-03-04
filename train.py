@@ -90,9 +90,9 @@ def train(train_loader, net, optimizer, epoch, i_tb):
 
         loss = 0.
         rel_loss = 0.
-        for i in range(len(pred_maps)):
+        for j in range(len(pred_maps)):
             # density loss
-            loss += (2**(int(i / 3))) * mseloss(pred_maps[i], gt_map)
+            loss += (2**(int(j / 3))) * mseloss(pred_maps[j], gt_map)
             # relative loss
             # rel_loss += (2**(int(i / 3))) * relloss(pred_maps[i], gt_map)
         # attention loss
