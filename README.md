@@ -23,8 +23,6 @@ pip install -r requirements.txt
 * Fill in the settings in datasets/SHHA/setting.py
 * Run 'train.py'
 
-(The part for relative loss will be reorganized)
-
 
 
 ## Evaluation
